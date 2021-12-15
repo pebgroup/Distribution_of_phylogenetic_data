@@ -16,16 +16,16 @@ The respository includes scripts used to map and analyze phylogenetic knowledge 
 * 2) a list of species that preserves duplicate species if they appear with different molecular markers
 
 **phylo_know_analysis_2021.R:** This script uses three datasets produced in the "wcvp_subset_2021" script, two subsets of the GenBank download produced in "genbank_download.R, and BIEN data:
-# WCVP:
+WCVP:
 * 1) ID's and Names
 * 2) WCVP distribution data in wide format with countries as columns
 * 3) WCVP distribution data in a long format with two columns: species and botanical country
-# GenBank:
+GenBank:
 * 4) a list of species that have at least ONE relevant sequence available
 * 5) a list of species that preserves duplicate species if they appear with different molecular markers
-# BIEN:
+BIEN:
 * 6) a list of species with BIEN occurrences for each botanical country, translated into WCSP ID's (BIEN_in_WCSP_regions_Sept21_2020download.RData)
-# Botanical countries:
+Botanical countries:
 * 7) a table of Level 3 botanical counrty codes and their area size
 The script produces multiple explanatory variables related to biodiversity and four response variables at the scale of botanical contries, which is all gathered in one table. These variables include:
 * 1) Total number of species with relevent molecular data on GenBank (response)

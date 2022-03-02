@@ -1,4 +1,4 @@
-# Mapping and explaining our phylogenetic knowledge
+# The Darwinian shortfall in plants: phylogenetic knowledge is driven by range size
 The respository includes scripts used to map and analyze phylogenetic knowledge of plants based on the World Checklist of Vascular Plants (WCVP) and GenBank. 
 
 
@@ -47,3 +47,9 @@ The script produces multiple explanatory variables related to biodiversity and f
 * shapefile of botanical countries  
 
 It conducts a statistical analysis of the dataset through spatial autoregressive modelling.
+
+## Useful data for the analysis
+
+**ferns_list.txt:** A list of fern families that is used to exclude all fern species from the original WCVP data, as they should not be part of the analysis. The list is involved in the **wcsp_subset_2021** script
+
+**bryophyta.csv:** A list of moss families that is used to exclude all moss species from the original WCVP data, as they should not be part of the analysis. The list is involved in the **wcsp_subset_2021** script

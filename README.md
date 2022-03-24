@@ -56,3 +56,6 @@ It conducts a statistical analysis of the dataset through spatial autoregressive
 **05_logit_2022.RMD**
 * the script uses "seq_area_2022.csv" as produced in "03_phylo_know_analysis_2021.R"
 * Logistic regression of the sequencing status of species (1 = sequenced, 0 = not sequenced) on their range size, measured as the sum of the areas (in km^2) of all the botanical countries a species occurs in. 
+
+**bien_TDWG_intersection_Sep2021_SERVER.R**
+* script to run on GenomeDK due to memomry requirements (min 16GB, 2h runtime). Assigns BIEN occurrences to botanical countries

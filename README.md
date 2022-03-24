@@ -5,17 +5,22 @@ The respository includes scripts used to map and analyze phylogenetic knowledge 
 
 ## R scripts:
 
-**wcvp_subset_2021:** The input of the script is WCVP datasets with names and distributions. The script produces four files: 
+The data that is required to run the scripts is available for download at https://doi.org/10.5061/dryad.2547d7wrz. Unzip the data in a folder named 'data' within the folder containing these scripts. Run scripts in numerical order. 
+
+**NOTE: "02_genbank_download.R" has a runtime that exceeds 3 hours. The script can be skipped, however, as the results are included in the Dryad repository.**
+
+**01_wcvp_subset_2022:** The input of the script is WCVP datasets with names and distributions. The script produces four files: 
 * 1) a table of all WCVP ID's and the corresponding name (names and id's)
 * 2) a table with two columns: accepted species name and distribution
 * 3) a table with columns for all botanical countries (L3 regions), and the species present in thoses countries
 * 4) a table with all WCVP synonyms and the corresponding accepted name (synonym translator)
 
-**genbank_download.R:** The input to the script is a subset of a GenBank download, which contains only species name and description. It produces two lists of species that have data relevant to phylogeny available in GenBank:
+**02_genbank_download.R_2022:** The input to the script is a subset of a GenBank download, which contains only species name and description. It produces two lists of species that have data relevant to phylogeny available in GenBank:
 * 1) a list of species that have at least ONE relevant sequence available
 * 2) a list of species that preserves duplicate species if they appear with different molecular markers
+* NOTE: LONG RUNTIME
 
-**phylo_know_analysis_2021.R:** This script uses three datasets produced in the "wcvp_subset_2021" script, two subsets of the GenBank download produced in "genbank_download.R, and BIEN data:  
+**03_phylo_know_analysis_2022.R:** This script uses three datasets produced in the "wcvp_subset_2021" script, two subsets of the GenBank download produced in "genbank_download.R, and BIEN data:  
 WCVP:
 * ID's and Names
 * WCVP distribution data in wide format with countries as columns
@@ -41,15 +46,13 @@ The script produces multiple explanatory variables related to biodiversity and f
 * Endemics relative to species richness
 * Proporption of endemics sequenced
 
-**statistical_modelling_2021.R:** The input to the script is: 
+**04_statistical_modelling_2022.R:** The input to the script is: 
 * the dataset of variables produced in "phylo_know_analysis_2021.R"
 * socioeconomic variables fitted to botanical countries
-* shapefile of botanical countries  
+* shapefile of botanical countries
 
 It conducts a statistical analysis of the dataset through spatial autoregressive modelling.
 
-## Useful data for the analysis
-
-**ferns_list.txt:** A list of fern families that is used to exclude all fern species from the original WCVP data, as they should not be part of the analysis. The list is involved in the **wcsp_subset_2021** script
-
-**bryophyta.csv:** A list of moss families that is used to exclude all moss species from the original WCVP data, as they should not be part of the analysis. The list is involved in the **wcsp_subset_2021** script
+**05_logit_2022.RMD**
+* the script uses "seq_area_2022.csv" as produced in "03_phylo_know_analysis_2021.R"
+* Logistic regression of the sequencing status of species (1 = sequenced, 0 = not sequenced) on their range size, measured as the sum of the areas (in km^2) of all the botanical countries a species occurs in. 
